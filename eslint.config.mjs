@@ -2,20 +2,20 @@ import js from "@eslint/js";
 import globals from "globals";
 
 export default [
-    {
-        ignores: ["coverage/**", "playwright-report/**", "test-results/**"],    
+  {
+    ignores: ["coverage/**", "playwright-report/**", "test-results/**"],
+  },
+  js.configs.recommended,
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      globals: globals.browser,
     },
-    js.configs.recommended,
-    {
-        files: ["**/*.js"],
-        languageOptions: {
-            globals: globals.browser
-        },
+  },
+  {
+    files: ["*.config.js", "*.config.mjs"],
+    languageOptions: {
+      globals: globals.node,
     },
-    {
-        files: ["*.config.js", "*.config.mjs"],
-        languageOptions: {
-            globals: globals.node,
-        },
-    },
-]
+  },
+];
