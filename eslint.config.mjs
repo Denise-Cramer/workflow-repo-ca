@@ -18,4 +18,16 @@ export default [
       globals: globals.node,
     },
   },
+
+  {
+    files: ["tests/**/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        test: "readonly",
+        expect: "readonly",
+        beforeEach: "readonly",
+      },
+    },
+  },
 ];
